@@ -2,14 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 
-" source ~/.vimrc.before if it exists.
-if filereadable(expand("~/.vimrc.before"))
-source ~/.vimrc.before
-endif
-
 " ================ General Config ====================
 
-execute pathogen#infect()
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
