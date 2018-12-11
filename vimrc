@@ -126,6 +126,7 @@ let NERDTreeShowHidden=1
 
 map <Leader>y "+y
 map <Leader>d "+d
+map <Leader>p "+p
 
 let g:tmux_navigator_no_mappings = 1
 
