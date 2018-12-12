@@ -1,6 +1,19 @@
 "Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'
+Plugin 'ervandew/supertab'
+
+call vundle#end()
+filetype plugin on
+filetype indent on
+
 
 " ================ General Config ====================
 set number                      "Line numbers are good
@@ -72,21 +85,10 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-filetype plugin on
-filetype indent on
-
 " Display tabs and trailing spaces visually
 set list listchars=tab:\ \ ,trail:·
 
 set linebreak    "Wrap lines at convenient points
-
-" ==================== Vundle =============================
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
-Plugin 'ervandew/supertab'
 
 " ================ Custom Settings ========================
 
