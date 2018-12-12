@@ -81,6 +81,14 @@ set list listchars=tab:\ \ ,trail:·
 
 set linebreak    "Wrap lines at convenient points
 
+" ==================== Vundle =============================
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'
+Plugin 'ervandew/supertab'
+
 " ================ Custom Settings ========================
 
 " Window pane resizing
