@@ -3,7 +3,7 @@
 set nocompatible
 
 " ================ General Config ====================
-
+execute pathogen#infect()
 set number                      "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -113,13 +113,10 @@ nmap <leader>m A # => <Esc>
 "
 vmap <leader>m :norm A # => <Esc>
 
-"Plugin call to ctrl p for fuzzy file search
-"
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"ctrlp setup
 let g:ctrlp_show_hidden = 1
 
-"Plugin call and set up for nerd tree, a file system explorer
-set runtimepath^=~/.vim/bundle/nerdtree
+"NERDTree setup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
