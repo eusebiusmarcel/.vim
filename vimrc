@@ -122,41 +122,43 @@ nmap <leader>m A # => <Esc>
 "
 vmap <leader>m :norm A # => <Esc>
 
-"ctrlp setup
+"ctrlp.vim setup
 let g:ctrlp_show_hidden = 1
 
-"NERDTree setup
+"nerdtree setup
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
+"Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
 
-let g:tmux_navigator_no_mappings = 1
-
-nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-
-let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-
-" RSpec.vim mappings
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
-nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
-
-" For ruby block selections
-runtime macros/matchit.vim
-
-" For Running plain Ruby test scripts
-nnoremap <leader>r :RunSpec<CR>
-nnoremap <leader>l :RunSpecLine<CR>
-nnoremap <leader>e :RunSpecLastRun<CR>
-nnoremap <leader>cr :RunSpecCloseResult<CR>
+" Unknown setup
+" let g:tmux_navigator_no_mappings = 1
+" 
+" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
+" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
+" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
+" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
+" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
+" 
+" let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
+" 
+" " RSpec.vim mappings
+" map <Leader>t :call RunCurrentSpecFile()<CR>
+" map <Leader>s :call RunNearestSpec()<CR>
+" map <Leader>l :call RunLastSpec()<CR>
+" map <Leader>a :call RunAllSpecs()<CR>
+" 
+" nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+" 
+" " For ruby block selections
+" runtime macros/matchit.vim
+" 
+" " For Running plain Ruby test scripts
+" nnoremap <leader>r :RunSpec<CR>
+" nnoremap <leader>l :RunSpecLine<CR>
+" nnoremap <leader>e :RunSpecLastRun<CR>
+" nnoremap <leader>cr :RunSpecCloseResult<CR>
