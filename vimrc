@@ -138,6 +138,7 @@ let g:vimrubocop_config = '~/.vim/rubocop.yml'
 map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
+map <Leader>nr :NERDTreeToggle<CR>
 
 " Unknown setup
 " let g:tmux_navigator_no_mappings = 1
