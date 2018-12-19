@@ -9,6 +9,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
+Plugin 'ngmy/vim-rubocop'
 
 call vundle#end()
 filetype plugin on
@@ -129,6 +130,9 @@ let g:ctrlp_show_hidden = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
+
+"rubocop setup
+let g:vimrubocop_config = '~/.vim/rubocop.yml'
 
 "Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
