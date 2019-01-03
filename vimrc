@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
 Plugin 'ngmy/vim-rubocop'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 filetype plugin on
