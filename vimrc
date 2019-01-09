@@ -11,6 +11,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'vim-scripts/vim-auto-save'
 
 call vundle#end()
 filetype plugin on
@@ -134,6 +135,9 @@ let NERDTreeShowHidden=1
 
 "rubocop setup
 let g:vimrubocop_config = '~/.vim/rubocop.yml'
+
+"autosave setup
+let g:auto_save = 1  " enable AutoSave on Vim startup
 
 "Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
