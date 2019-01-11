@@ -12,6 +12,10 @@ Plugin 'ervandew/supertab'
 Plugin 'ngmy/vim-rubocop'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
+Plugin 'w0rp/ale'
+Plugin 'dracula/vim'
+Plugin 'herrbischoff/cobalt2.vim'
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin on
@@ -35,6 +39,10 @@ set hidden
 
 "turn on syntax highlighting
 syntax on
+
+"set theme
+color gruvbox
+set background=dark
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
