@@ -134,7 +134,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 
 "rubocop setup
-let g:vimrubocop_config = '~/.vim/rubocop.yml'
+"let g:vimrubocop_config = '~/.vim/rubocop.yml'
 
 "autosave setup
 let g:auto_save = 1  " enable AutoSave on Vim startup
