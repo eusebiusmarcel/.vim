@@ -13,8 +13,6 @@ Plugin 'ngmy/vim-rubocop'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'w0rp/ale'
-Plugin 'dracula/vim'
-Plugin 'herrbischoff/cobalt2.vim'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
@@ -146,6 +144,10 @@ let NERDTreeShowHidden=1
 
 "autosave setup
 let g:auto_save = 1  " enable AutoSave on Vim startup
+
+"ale setup
+highlight ALEWarning cterm=underline
+highlight ALEError ctermbg=Red cterm=underline
 
 "Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
