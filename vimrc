@@ -148,6 +148,8 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 "ale setup
 highlight ALEWarning cterm=underline
 highlight ALEError ctermbg=Red cterm=underline
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 "Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
