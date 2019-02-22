@@ -14,6 +14,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'w0rp/ale'
 Plugin 'morhetz/gruvbox'
+Plugin 'thoughtbot/vim-rspec'
 
 call vundle#end()
 filetype plugin on
@@ -151,13 +152,19 @@ highlight ALEError ctermbg=Red cterm=underline
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" RSpec.vim mappings
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
 "Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
 map <Leader>nr :NERDTreeToggle<CR>
 
-" Unknown setup
+" Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
 " 
 " nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
@@ -167,12 +174,6 @@ map <Leader>nr :NERDTreeToggle<CR>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 " 
 " let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-" 
-" " RSpec.vim mappings
-" map <Leader>t :call RunCurrentSpecFile()<CR>
-" map <Leader>s :call RunNearestSpec()<CR>
-" map <Leader>l :call RunLastSpec()<CR>
-" map <Leader>a :call RunAllSpecs()<CR>
 " 
 " nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
 " 
