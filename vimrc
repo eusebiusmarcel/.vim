@@ -152,7 +152,8 @@ highlight ALEError ctermbg=Red cterm=underline
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" RSpec.vim mappings
+" RSpec.vim settings
+let g:rspec_command = "!bundle exec rspec {spec}"
 map <Leader>t :call RunCurrentSpecFile()<CR>
 map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
