@@ -31,11 +31,6 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 
-" This makes vim act like all other editors, buffers can
-" exist in the background without being in a window.
-" http://items.sjbach.com/319/configuring-vim-right
-set hidden
-
 "turn on syntax highlighting
 syntax on
 
@@ -49,6 +44,20 @@ set background=dark
 " the plugins.
 let mapleader=","
 set timeout timeoutlen=1500
+
+" ================= Additional Config =================
+" Reference: http://items.sjbach.com/319/configuring-vim-right
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+set hidden
+
+" Enable extended % matching for if/elsif/else/end, def/end, do/end, etc
+runtime macros/matchit.vim
+
+" Scroll the viewport faster
+nnoremap <C-e> 3<C-e>
+nnoremap <C-y> 3<C-y>
+
 
 " ================ Turn Off Swap Files ==============
 
@@ -173,14 +182,11 @@ map <Leader>nr :NERDTreeToggle<CR>
 " nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
 " nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 " nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-" 
+"
 " let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-" 
+"
 " nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
-" 
-" " For ruby block selections
-" runtime macros/matchit.vim
-" 
+"
 " " For Running plain Ruby test scripts
 " nnoremap <leader>r :RunSpec<CR>
 " nnoremap <leader>l :RunSpecLine<CR>
