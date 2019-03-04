@@ -15,6 +15,7 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'w0rp/ale'
 Plugin 'morhetz/gruvbox'
 Plugin 'thoughtbot/vim-rspec'
+Plugin 'mudge/runspec.vim'
 
 call vundle#end()
 filetype plugin on
@@ -148,6 +149,7 @@ let g:ctrlp_show_hidden = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
+map <Leader>nr :NERDTreeToggle<CR>
 
 "rubocop setup
 "let g:vimrubocop_config = '~/.vim/rubocop.yml'
@@ -168,11 +170,18 @@ map <Leader>s :call RunNearestSpec()<CR>
 map <Leader>l :call RunLastSpec()<CR>
 map <Leader>a :call RunAllSpecs()<CR>
 
-"Shortcut for copying and pasting to and from system clipboard
+" For Running plain Ruby test scripts
+map <Leader>r <Plug>RunSpecRun
+map <Leader>s <Plug>RunSpecToggle
+" nnoremap <leader>r :RunSpec<CR>
+" nnoremap <leader>l :RunSpecLine<CR>
+" nnoremap <leader>e :RunSpecLastRun<CR>
+" nnoremap <leader>cr :RunSpecCloseResult<CR>
+
+" Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
-map <Leader>nr :NERDTreeToggle<CR>
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
@@ -186,9 +195,3 @@ map <Leader>nr :NERDTreeToggle<CR>
 " let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
 "
 " nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
-"
-" " For Running plain Ruby test scripts
-" nnoremap <leader>r :RunSpec<CR>
-" nnoremap <leader>l :RunSpecLine<CR>
-" nnoremap <leader>e :RunSpecLastRun<CR>
-" nnoremap <leader>cr :RunSpecCloseResult<CR>
