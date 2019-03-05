@@ -164,7 +164,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 " For Running plain Ruby test scripts
 map <Leader>r <Plug>RunSpecRun
 " Switch between spec and corresponding code
-map <Leader>sw <Plug>RunSpecToggle 
+map <Leader>w <Plug>RunSpecToggle 
 " nnoremap <leader>r :RunSpec<CR>
 " nnoremap <leader>l :RunSpecLine<CR>
 " nnoremap <leader>e :RunSpecLastRun<CR>
