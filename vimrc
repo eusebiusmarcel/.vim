@@ -116,7 +116,7 @@ set linebreak    "Wrap lines at convenient points
 nnoremap <silent> <Leader>[ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>] :exe "resize " . (winheight(0) * 2/3)<CR>
 
-" ===== Seeing Is Believing =====
+" ========= Seeing Is Believing =========
 " " Assumes you have a Ruby with SiB available in the PATH
 " " If it doesn't work, you may need to `gem install seeing_is_believing -v
 " 3.0.0.beta.6`
@@ -126,22 +126,12 @@ nnoremap <silent> <Leader>] :exe "resize " . (winheight(0) * 2/3)<CR>
 "
 nmap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
 "
-"  " Annotate marked lines
-"
-nmap <leader>n :%.!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk --xmpfilter-style<CR>;
-"
 "  " Remove annotations
 "
 nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 "
-"  " Mark the current line for annotation
-"
-nmap <leader>m A # => <Esc>
-"
-"  " Mark the highlighted lines for annotation
-"
-vmap <leader>m :norm A # => <Esc>
-
+" ========================================
+" 
 "ctrlp.vim setup
 let g:ctrlp_show_hidden = 1
 
@@ -149,7 +139,8 @@ let g:ctrlp_show_hidden = 1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-map <Leader>nr :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>m :NERDTreeFind<CR>
 
 "rubocop setup
 "let g:vimrubocop_config = '~/.vim/rubocop.yml'
@@ -172,7 +163,8 @@ map <Leader>a :call RunAllSpecs()<CR>
 
 " For Running plain Ruby test scripts
 map <Leader>r <Plug>RunSpecRun
-" map <Leader>s <Plug>RunSpecToggle
+" Switch between spec and corresponding code
+map <Leader>sw <Plug>RunSpecToggle 
 " nnoremap <leader>r :RunSpec<CR>
 " nnoremap <leader>l :RunSpecLine<CR>
 " nnoremap <leader>e :RunSpecLastRun<CR>
