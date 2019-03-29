@@ -187,3 +187,9 @@ map <Leader>p "+p
 " let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
 "
 " nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
+"
+" Do profiling to see what slows vim down, command ':profile pause' when vim
+" starts to slow down, and see profile.log
+profile start profile.log
+profile func *
+profile file *
