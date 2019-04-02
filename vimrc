@@ -190,6 +190,6 @@ map <Leader>p "+p
 "
 " Do profiling to see what slows vim down, command ':profile pause' when vim
 " starts to slow down, and see profile.log
-profile start profile.log
-profile func *
-profile file *
+" profile start profile.log
+" profile func *
+" profile file *
