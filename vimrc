@@ -16,6 +16,7 @@ Plugin 'w0rp/ale'
 Plugin 'morhetz/gruvbox'
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'mudge/runspec.vim'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin on
