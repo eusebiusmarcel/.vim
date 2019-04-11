@@ -135,6 +135,11 @@ nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 " 
 "ctrlp.vim setup
 let g:ctrlp_show_hidden = 1
+"to speed up ctrlp
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 "nerdtree setup
 autocmd StdinReadPre * let s:std_in=1
