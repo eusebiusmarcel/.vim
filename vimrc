@@ -14,7 +14,7 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'w0rp/ale'
 Plugin 'morhetz/gruvbox'
-Plugin 'thoughtbot/vim-rspec'
+Plugin 'janko/vim-test'
 Plugin 'mudge/runspec.vim'
 Plugin 'fatih/vim-go'
 
@@ -173,11 +173,12 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " RSpec.vim settings
-let g:rspec_command = "!bundle exec rspec --tag ~gcs --tag ~sql_view {spec}"
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
+let test#ruby#rspec#options = '--tag ~gcs --tag ~sql_view'
+map <Leader>t :TestFile<CR>
+map <Leader>s :TestNearest<CR>
+map <Leader>l :TestLast<CR>
+map <Leader>a :TestSuite<CR>
+map <Leader>v :TestVisit<CR>
 
 " For Running plain Ruby test scripts
 map <Leader>r <Plug>RunSpecRun
