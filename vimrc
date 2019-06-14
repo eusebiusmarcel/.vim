@@ -197,6 +197,7 @@ map <Leader>p "+p
 " Shortcut for git
 map <Leader>gs :!git status<CR>
 map <Leader>gd :!git diff<CR>
+map <Leader>gl :!git log<CR>
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
