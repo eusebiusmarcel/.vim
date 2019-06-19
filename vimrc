@@ -9,7 +9,6 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
 Plugin 'w0rp/ale'
@@ -158,9 +157,6 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
 map <Leader>n :NERDTreeToggle<CR>
 map <Leader>m :NERDTreeFind<CR>
-
-"rubocop setup
-"let g:vimrubocop_config = '~/.vim/rubocop.yml'
 
 "autosave setup
 let g:auto_save = 1  " enable AutoSave on Vim startup
