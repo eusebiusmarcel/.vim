@@ -195,6 +195,8 @@ map <Leader>p "+p
 map <Leader>gs :!git status<CR>
 map <Leader>gd :!git diff<CR>
 map <Leader>gl :!git log<CR>
+" Shortcut for git blame
+nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
