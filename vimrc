@@ -170,7 +170,7 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " RSpec.vim settings
-let test#ruby#rspec#options = '--tag ~sql_view --tag ~gcs --tag ~flaky --tag ~deprecated'
+" let test#ruby#rspec#options = '--tag ~sql_view --tag ~gcs --tag ~flaky --tag ~deprecated'
 map <Leader>t :TestFile<CR>
 map <Leader>s :TestNearest<CR>
 map <Leader>l :TestLast<CR>
