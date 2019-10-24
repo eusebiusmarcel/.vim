@@ -17,6 +17,7 @@ Plugin 'janko/vim-test'
 Plugin 'mudge/runspec.vim'
 Plugin 'fatih/vim-go'
 Plugin 'zivyangll/git-blame.vim'
+Plugin 'slim-template/vim-slim.git'
 
 call vundle#end()
 filetype plugin on
