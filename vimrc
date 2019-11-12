@@ -135,6 +135,7 @@ nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 " ========================================
 " 
 "ctrlp.vim setup
+let g:ctrlp_max_files=0
 let g:ctrlp_show_hidden = 1
 " Ignore some folders and files for CtrlP indexing
 let g:ctrlp_custom_ignore = {
