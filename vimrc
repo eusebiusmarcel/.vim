@@ -18,6 +18,7 @@ Plugin 'mudge/runspec.vim'
 Plugin 'fatih/vim-go'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'slim-template/vim-slim.git'
+Plugin 'tpope/vim-rails'
 
 call vundle#end()
 filetype plugin on
