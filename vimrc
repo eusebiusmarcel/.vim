@@ -19,6 +19,7 @@ Plugin 'fatih/vim-go'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-rails'
+Plugin 'jremmen/vim-ripgrep'
 
 call vundle#end()
 filetype plugin on
@@ -143,6 +144,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|public$|log\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+
+"vim-ripgrep setup
+"set smartcase mode
+let g:rg_command = 'rg --vimgrep -S'
+
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
