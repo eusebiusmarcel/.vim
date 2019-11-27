@@ -136,7 +136,13 @@ nmap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of
 nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 "
 " ========================================
-" 
+"
+" ctags setup
+" Command in project folder for the first time: ctags -R *
+" Make sure you have exuberant ctags installed.
+" Make sure you put tags file in .gitignore.
+set tags=./tags;
+"
 "ctrlp.vim setup
 let g:ctrlp_max_files=0
 let g:ctrlp_show_hidden = 1
@@ -146,8 +152,9 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
 
-"vim-ripgrep setup
-"set smartcase mode
+" vim-ripgrep setup
+" Make sure you have ripgrep installed
+" set smartcase mode
 let g:rg_command = 'rg --vimgrep -S'
 
 " The Silver Searcher
