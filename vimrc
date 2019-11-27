@@ -20,6 +20,7 @@ Plugin 'zivyangll/git-blame.vim'
 Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-rails'
 Plugin 'jremmen/vim-ripgrep'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()
 filetype plugin on
