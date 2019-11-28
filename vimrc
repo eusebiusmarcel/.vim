@@ -142,6 +142,8 @@ nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 " Make sure you have exuberant ctags installed.
 " Make sure you put tags file in .gitignore.
 set tags=./tags;
+" set shortcut to update tags
+map <Leader>ut :!ctags -R *<CR>
 "
 "ctrlp.vim setup
 let g:ctrlp_max_files=0
