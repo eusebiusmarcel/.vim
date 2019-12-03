@@ -21,8 +21,6 @@ Plugin 'slim-template/vim-slim.git'
 Plugin 'tpope/vim-rails'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'xolox/vim-misc'
-Plugin 'xolox/vim-easytags'
 
 call vundle#end()
 filetype plugin on
@@ -138,6 +136,14 @@ nmap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of
 nmap <leader>c :%.!seeing_is_believing --clean<CR>;
 "
 " ========================================
+"
+" ctags setup
+" Command in project folder for the first time: ctags -R *
+" Make sure you have exuberant ctags installed.
+" Make sure you put tags file in .gitignore.
+set tags=./tags;
+" set shortcut to update tags
+map <Leader>ut :!ctags -R *<CR>
 "
 "ctrlp.vim setup
 let g:ctrlp_max_files=0
