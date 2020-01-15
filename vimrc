@@ -211,6 +211,7 @@ map <Leader>w <Plug>RunSpecToggle
 map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
+map <Leader>P "+P
 
 " Shortcut for git
 map <Leader>gs :!git status<CR>
