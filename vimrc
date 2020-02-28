@@ -216,7 +216,14 @@ map <Leader>P "+P
 " Shortcut for git
 map <Leader>gs :!git status<CR>
 map <Leader>gd :!git diff<CR>
+map <Leader>gt :!git diff --staged<CR>
+map <Leader>ga :!git add .<CR>
+map <Leader>gc :!git commit<CR>
+map <Leader>gm :!git commit --amend<CR>
 map <Leader>gl :!git log<CR>
+map <Leader>gh :!git diff HEAD^<CR>
+map <Leader>gf :!git push --force-with-lease<CR>
+map <Leader>gp :!git push<CR>
 " Shortcut for git blame
 nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
 
