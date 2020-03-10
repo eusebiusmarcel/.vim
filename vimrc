@@ -183,6 +183,14 @@ let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
 "ale setup
+let g:ale_linters = {
+  \    'javascript': ['eslint'],
+  \    'typescript': ['prettier', 'tslint'],
+  \    'vue': ['eslint'],
+  \    'scss': ['prettier'],
+  \    'html': ['prettier'],
+  \    'reason': ['refmt']
+\}
 highlight ALEWarning cterm=underline
 highlight ALEError ctermbg=Red cterm=underline
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
