@@ -23,6 +23,7 @@ Plugin 'jremmen/vim-ripgrep'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
 
 call vundle#end()
 filetype plugin on
@@ -181,6 +182,14 @@ map <Leader>m :NERDTreeFind<CR>
 "autosave setup
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+"emmet config
+let g:user_emmet_leader_key=','
+let g:user_emmet_settings = {
+\  'javascript' : {
+\      'extends' : 'jsx',
+\  },
+\}
 
 "ale setup
 let g:ale_fixers = {
