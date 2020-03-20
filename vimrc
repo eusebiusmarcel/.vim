@@ -193,7 +193,7 @@ let g:user_emmet_settings = {
 
 "ale setup
 let g:ale_fixers = {
-  \    'javascript': ['eslint'],
+  \    'javascript': ['eslint', 'standard'],
   \    'typescript': ['prettier', 'tslint'],
   \    'vue': ['eslint'],
   \    'scss': ['prettier'],
@@ -202,6 +202,8 @@ let g:ale_fixers = {
 \}
 nmap <F8> <Plug>(ale_fix)
 " let g:ale_fix_on_save = 1
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
 highlight ALEWarning cterm=underline
 highlight ALEError ctermbg=Red cterm=underline
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
