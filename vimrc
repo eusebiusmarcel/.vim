@@ -22,8 +22,8 @@ Plugin 'tpope/vim-rails'
 Plugin 'jremmen/vim-ripgrep'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
+Plugin 'MaxMEllon/vim-jsx-pretty'
 
 call vundle#end()
 filetype plugin on
