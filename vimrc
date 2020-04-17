@@ -44,7 +44,7 @@ set autoread                    "Reload files changed outside vim
 syntax on
 
 "set theme
-color gruvbox
+colorscheme gruvbox
 set background=dark
 
 " Change leader to a comma because the backslash is too far away
