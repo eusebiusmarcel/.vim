@@ -25,6 +25,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'Ivo-Donchev/vim-react-goto-definition'
+Plugin 'metakirby5/codi.vim'
 
 call vundle#end()
 filetype plugin on
