@@ -31,7 +31,6 @@ call vundle#end()
 filetype plugin on
 filetype indent on
 
-
 " ================ General Config ====================
 set number relativenumber       "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
@@ -41,6 +40,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set termguicolors               "Use 256 colors"
 
 "turn on syntax highlighting
 syntax on
@@ -214,6 +214,8 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+highlight ALEWarning guifg=#282828 guibg=#d79921
+highlight ALEError guifg=#282828 guibg=#cc241d
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
