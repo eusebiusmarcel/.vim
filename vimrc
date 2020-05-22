@@ -24,7 +24,6 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mattn/emmet-vim'
 Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'Ivo-Donchev/vim-react-goto-definition'
 Plugin 'metakirby5/codi.vim'
 
 call vundle#end()
@@ -179,9 +178,6 @@ let g:user_emmet_settings = {
 \      'extends' : 'jsx',
 \  },
 \}
-
-" vim-react-goto-definition shortcut
-noremap <leader>D :call ReactGotoDef()<CR>
 
 "ale setup
 let g:ale_fixers = {
