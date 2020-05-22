@@ -128,20 +128,6 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
-" ========= Seeing Is Believing =========
-" " Assumes you have a Ruby with SiB available in the PATH
-" " If it doesn't work, you may need to `gem install seeing_is_believing -v
-" 3.0.0.beta.6`
-" " ...yeah, current release is a beta, which won't auto-install
-"
-" " Annotate every line
-"
-nmap <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --number-of-captures 300 --alignment-strategy chunk<CR>;
-"
-"  " Remove annotations
-"
-nmap <leader>c :%.!seeing_is_believing --clean<CR>;
-"
 " ========================================
 "
 " ctags setup
@@ -218,25 +204,6 @@ highlight ALEWarning guifg=#282828 guibg=#d79921
 highlight ALEError guifg=#282828 guibg=#cc241d
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
-
-" RSpec.vim settings
-" let test#ruby#rspec#options = '--tag ~sql_view --tag ~gcs --tag ~flaky --tag ~deprecated'
-let test#ruby#bundle_exec = 0
-
-map <Leader>t :TestFile<CR>
-map <Leader>s :TestNearest<CR>
-map <Leader>l :TestLast<CR>
-map <Leader>a :TestSuite<CR>
-map <Leader>v :TestVisit<CR>
-
-" For Running plain Ruby test scripts
-map <Leader>r <Plug>RunSpecRun
-" Switch between spec and corresponding code
-map <Leader>w <Plug>RunSpecToggle 
-" nnoremap <leader>r :RunSpec<CR>
-" nnoremap <leader>l :RunSpecLine<CR>
-" nnoremap <leader>e :RunSpecLastRun<CR>
-" nnoremap <leader>cr :RunSpecCloseResult<CR>
 
 " Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
