@@ -123,8 +123,10 @@ set linebreak    "Wrap lines at convenient points
 " ================ Custom Settings ========================
 
 " Window pane resizing
-nnoremap <silent> <Leader>[ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>] :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " ========= Seeing Is Believing =========
 " " Assumes you have a Ruby with SiB available in the PATH
