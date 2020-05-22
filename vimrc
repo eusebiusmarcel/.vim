@@ -200,8 +200,9 @@ let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-highlight ALEWarning guifg=#282828 guibg=#d79921
+highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
 highlight ALEError guifg=#282828 guibg=#fb4934
+highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
