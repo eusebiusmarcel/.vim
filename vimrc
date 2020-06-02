@@ -199,8 +199,8 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
 highlight ALEError guifg=#282828 guibg=#fb4934
 highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <C-a>k <Plug>(ale_previous_wrap)
+nmap <silent> <C-a>j <Plug>(ale_next_wrap)
 
 " Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
