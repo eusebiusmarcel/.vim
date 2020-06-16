@@ -27,6 +27,7 @@ Plugin 'MaxMEllon/vim-jsx-pretty'
 Plugin 'metakirby5/codi.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
+Plugin 'posva/vim-vue'
 
 call vundle#end()
 filetype plugin on
