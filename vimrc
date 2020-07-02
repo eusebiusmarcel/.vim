@@ -28,6 +28,7 @@ Plugin 'metakirby5/codi.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
 Plugin 'posva/vim-vue'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 filetype plugin on
@@ -168,6 +169,12 @@ if executable('rg')
 endif
 " ignore git and temp directories as well as Vim’s swap files
 set wildignore+=*/.git/*,*/tmp/*,*.swp
+" Show up to 100 results
+" https://github.com/kien/ctrlp.vim/issues/187
+let g:ctrlp_match_window = 'results:100'
+" Set shortcut for searching tags
+" https://www.freecodecamp.org/news/make-your-vim-smarter-using-ctrlp-and-ctags-846fc12178a4/
+nnoremap <leader>. :CtrlPTag<cr>
 
 "nerdtree setup
 autocmd StdinReadPre * let s:std_in=1
