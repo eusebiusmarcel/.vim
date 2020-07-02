@@ -134,8 +134,8 @@ set linebreak    "Wrap lines at convenient points
 " Window pane resizing
 nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
 nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+" nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+" nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 
 " ========================================
 "
@@ -146,6 +146,8 @@ nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 set tags=./tags;
 " set shortcut to update tags
 map <Leader>ut :!ctags -R *<CR>
+nnoremap <Leader>] :tn<CR>
+nnoremap <Leader>[ :tp<CR>
 "
 "ctrlp.vim setup
 let g:ctrlp_max_files=0
