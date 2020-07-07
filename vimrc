@@ -7,6 +7,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
@@ -15,7 +16,6 @@ Plugin 'jremmen/vim-ripgrep'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
 Plugin 'posva/vim-vue'
-Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 filetype plugin on
