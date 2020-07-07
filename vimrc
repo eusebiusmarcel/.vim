@@ -7,24 +7,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
 Plugin 'ervandew/supertab'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'vim-scripts/vim-auto-save'
-Plugin 'dense-analysis/ale'
-Plugin 'morhetz/gruvbox'
-Plugin 'janko/vim-test'
-Plugin 'mudge/runspec.vim'
-Plugin 'fatih/vim-go'
 Plugin 'zivyangll/git-blame.vim'
-Plugin 'slim-template/vim-slim.git'
-Plugin 'tpope/vim-rails'
 Plugin 'jremmen/vim-ripgrep'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
-Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'metakirby5/codi.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-obsession'
 Plugin 'posva/vim-vue'
@@ -43,20 +30,9 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
-set termguicolors               "Use 256 colors"
 
 "turn on syntax highlighting
 syntax on
-
-"set theme
-colorscheme gruvbox
-set background=light
-
-if exists('+termguicolors')
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  set termguicolors
-endif
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
@@ -70,9 +46,6 @@ set timeout timeoutlen=1500
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 set hidden
-
-" Enable extended % matching for if/elsif/else/end, def/end, do/end, etc
-runtime macros/matchit.vim
 
 " Scroll the viewport faster
 nnoremap <C-e> 3<C-e>
@@ -189,37 +162,6 @@ map <Leader>m :NERDTreeFind<CR>
 let g:auto_save = 1  " enable AutoSave on Vim startup
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
-"emmet config
-let g:user_emmet_leader_key=','
-let g:user_emmet_settings = {
-\  'javascript' : {
-\      'extends' : 'jsx',
-\  },
-\}
-
-"ale setup
-let g:ale_fixers = {
-  \    'javascript': ['eslint', 'standard'],
-  \    'typescript': ['prettier', 'tslint'],
-  \    'vue': ['eslint'],
-  \    'scss': ['prettier'],
-  \    'html': ['prettier'],
-  \    'reason': ['refmt']
-\}
-nmap <F8> <Plug>(ale_fix)
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_column_always = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
-highlight ALEError guifg=#282828 guibg=#fb4934
-highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
-nmap <silent> <C-a>k <Plug>(ale_previous_wrap)
-nmap <silent> <C-a>j <Plug>(ale_next_wrap)
-
 " Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
 map <Leader>d "+d
@@ -239,22 +181,3 @@ map <Leader>gf :!git push --force-with-lease<CR>
 map <Leader>gp :!git push<CR>
 " Shortcut for git blame
 nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
-
-" Vim Tmux Navigator setting
-" let g:tmux_navigator_no_mappings = 1
-" 
-" nnoremap <silent> {Left-mapping} :TmuxNavigateLeft<cr>
-" nnoremap <silent> {Down-Mapping} :TmuxNavigateDown<cr>
-" nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
-" nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
-" nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
-"
-" let g:spec_runner_dispatcher = "VtrSendCommand! {command}"
-"
-" nnoremap <leader>irb :VtrOpenRunner {'orientation': 'h', 'percentage': 50, 'cmd': 'irb'}<cr>
-"
-" Do profiling to see what slows vim down, command ':profile pause' when vim
-" starts to slow down, and see profile.log
-" profile start profile.log
-" profile func *
-" profile file *
