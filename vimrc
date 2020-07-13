@@ -2,35 +2,54 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-endwise'
-Plugin 'ervandew/supertab'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'vim-scripts/vim-auto-save'
-Plugin 'dense-analysis/ale'
-Plugin 'morhetz/gruvbox'
-Plugin 'janko/vim-test'
-Plugin 'mudge/runspec.vim'
-Plugin 'fatih/vim-go'
-Plugin 'zivyangll/git-blame.vim'
-Plugin 'slim-template/vim-slim.git'
-Plugin 'tpope/vim-rails'
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mattn/emmet-vim'
-Plugin 'MaxMEllon/vim-jsx-pretty'
-Plugin 'metakirby5/codi.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'tpope/vim-obsession'
-Plugin 'posva/vim-vue'
-Plugin 'ludovicchabant/vim-gutentags'
+let mapleader=","
 
-call vundle#end()
+" vim-plug (plugin manager)
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+call plug#begin()
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-endwise'
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
+Plug 'vim-scripts/vim-auto-save'
+Plug 'dense-analysis/ale'
+Plug 'morhetz/gruvbox'
+Plug 'janko/vim-test'
+Plug 'zivyangll/git-blame.vim'
+Plug 'jremmen/vim-ripgrep'
+Plug 'metakirby5/codi.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-obsession'
+Plug 'mattn/emmet-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'mudge/runspec.vim', { 'for': 'ruby' }
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+call plug#end()
+
 filetype plugin on
 filetype indent on
 
@@ -58,12 +77,28 @@ if exists('+termguicolors')
   set termguicolors
 endif
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-" The mapleader has to be set before vundle starts loading all 
-" the plugins.
-let mapleader=","
 set timeout timeoutlen=1500
+
+" ================= Language Client Config =================
+let g:LanguageClient_serverCommands = {
+    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ }
+
+" note that if you are using Plug mapping you should not use `noremap` mappings.
+nmap <F5> <Plug>(lcn-menu)
+" Or map each action separately
+nmap <silent>K <Plug>(lcn-hover)
+nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> <F2> <Plug>(lcn-rename)
+
+" let g:LanguageClient_rootMarkers = {
+"     \ 'javascript': ['jsconfig.json'],
+"     \ 'typescript': ['tsconfig.json'],
+"     \ }
+
+let g:deoplete#enable_at_startup = 1
 
 " ================= Additional Config =================
 " Reference: http://items.sjbach.com/319/configuring-vim-right
@@ -197,10 +232,10 @@ let g:user_emmet_settings = {
 \  },
 \}
 
-"ale setup
+le setup
 let g:ale_fixers = {
-  \    'javascript': ['eslint', 'standard'],
-  \    'typescript': ['prettier', 'tslint'],
+  \    'javascript': ['eslint'],
+  \    'typescript': ['tslint'],
   \    'vue': ['eslint'],
   \    'scss': ['prettier'],
   \    'html': ['prettier'],
