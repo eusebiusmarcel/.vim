@@ -36,7 +36,6 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mudge/runspec.vim', { 'for': 'ruby' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
@@ -174,16 +173,6 @@ nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
 
 " ========================================
 "
-" ctags setup
-" Command in project folder for the first time: ctags -R *
-" Make sure you have exuberant ctags installed.
-" Make sure you put tags file in .gitignore.
-set tags=./tags;
-" set shortcut to update tags
-map <Leader>ut :!ctags -R *<CR>
-nnoremap <Leader>] :tn<CR>
-nnoremap <Leader>[ :tp<CR>
-"
 "ctrlp.vim setup
 let g:ctrlp_max_files=0
 " Ignore some folders and files for CtrlP indexing
@@ -209,9 +198,6 @@ set wildignore+=*/.git/*,*/tmp/*,*.swp
 " Show up to 100 results
 " https://github.com/kien/ctrlp.vim/issues/187
 let g:ctrlp_match_window = 'results:100'
-" Set shortcut for searching tags
-" https://www.freecodecamp.org/news/make-your-vim-smarter-using-ctrlp-and-ctags-846fc12178a4/
-nnoremap <leader>. :CtrlPTag<cr>
 
 "nerdtree setup
 autocmd StdinReadPre * let s:std_in=1
