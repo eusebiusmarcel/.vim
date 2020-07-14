@@ -97,6 +97,8 @@ nmap <silent> <F2> <Plug>(lcn-rename)
      \ 'typescript': ['tsconfig.json'],
      \ }
 
+let g:LanguageClient_diagnosticsEnable=0
+
 let g:deoplete#enable_at_startup = 1
 
 " ================= Additional Config =================
