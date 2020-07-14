@@ -92,10 +92,10 @@ nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
 nmap <silent> <F2> <Plug>(lcn-rename)
 
-" let g:LanguageClient_rootMarkers = {
-"     \ 'javascript': ['jsconfig.json'],
-"     \ 'typescript': ['tsconfig.json'],
-"     \ }
+ let g:LanguageClient_rootMarkers = {
+     \ 'javascript': ['tsconfig.json'],
+     \ 'typescript': ['tsconfig.json'],
+     \ }
 
 let g:deoplete#enable_at_startup = 1
 
