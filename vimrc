@@ -17,7 +17,7 @@ Plug 'tpope/vim-endwise'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/vim-auto-save'
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 Plug 'morhetz/gruvbox'
 Plug 'janko/vim-test'
 Plug 'zivyangll/git-blame.vim'
@@ -36,17 +36,18 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mudge/runspec.vim', { 'for': 'ruby' }
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
-Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'autozimu/LanguageClient-neovim', {
+"     \ 'branch': 'next',
+"     \ 'do': 'bash install.sh',
+"     \ }
+" if has('nvim')
+"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" else
+"   Plug 'Shougo/deoplete.nvim'
+"   Plug 'roxma/nvim-yarp'
+"   Plug 'roxma/vim-hug-neovim-rpc'
+" endif
 call plug#end()
 
 filetype plugin on
@@ -78,28 +79,34 @@ endif
 
 set timeout timeoutlen=1500
 
+" ================= CoC (Conquer of Completion) =================
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+"
 " ================= Language Client Config =================
-let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ }
-
-" note that if you are using Plug mapping you should not use `noremap` mappings.
-nmap <F5> <Plug>(lcn-menu)
-" Or map each action separately
-nmap <silent>K <Plug>(lcn-hover)
-nmap <silent> gd <Plug>(lcn-definition)
-nmap <silent> <F2> <Plug>(lcn-rename)
-
- let g:LanguageClient_rootMarkers = {
-     \ 'javascript': ['tsconfig.json'],
-     \ 'typescript': ['tsconfig.json'],
-     \ }
-
-let g:LanguageClient_diagnosticsEnable=0
-
-let g:deoplete#enable_at_startup = 1
+" let g:LanguageClient_serverCommands = {
+"     \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
+"     \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
+"     \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
+"     \ }
+" 
+" " note that if you are using Plug mapping you should not use `noremap` mappings.
+" nmap <F5> <Plug>(lcn-menu)
+" " Or map each action separately
+" nmap <silent>K <Plug>(lcn-hover)
+" nmap <silent> gd <Plug>(lcn-definition)
+" nmap <silent> <F2> <Plug>(lcn-rename)
+" 
+"  let g:LanguageClient_rootMarkers = {
+"      \ 'javascript': ['tsconfig.json'],
+"      \ 'typescript': ['tsconfig.json'],
+"      \ }
+" 
+" let g:LanguageClient_diagnosticsEnable=0
+" 
+" let g:deoplete#enable_at_startup = 1
 
 " ================= Additional Config =================
 " Reference: http://items.sjbach.com/319/configuring-vim-right
@@ -220,28 +227,28 @@ let g:user_emmet_settings = {
 \  },
 \}
 
-le setup
-let g:ale_fixers = {
-  \    'javascript': ['eslint'],
-  \    'typescript': ['tslint'],
-  \    'vue': ['eslint'],
-  \    'scss': ['prettier'],
-  \    'html': ['prettier'],
-  \    'reason': ['refmt']
-\}
-nmap <F8> <Plug>(ale_fix)
-let g:ale_fix_on_save = 1
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
-let g:ale_sign_column_always = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
-highlight ALEError guifg=#282828 guibg=#fb4934
-highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
-nmap <silent> <C-a>k <Plug>(ale_previous_wrap)
-nmap <silent> <C-a>j <Plug>(ale_next_wrap)
+" ================ ale setup ================
+" let g:ale_fixers = {
+"   \    'javascript': ['eslint'],
+"   \    'typescript': ['tslint'],
+"   \    'vue': ['eslint'],
+"   \    'scss': ['prettier'],
+"   \    'html': ['prettier'],
+"   \    'reason': ['refmt']
+" \}
+" nmap <F8> <Plug>(ale_fix)
+" let g:ale_fix_on_save = 1
+" let g:ale_sign_error = '✘'
+" let g:ale_sign_warning = '⚠'
+" let g:ale_sign_column_always = 1
+" let g:ale_echo_msg_error_str = 'E'
+" let g:ale_echo_msg_warning_str = 'W'
+" let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
+" highlight ALEError guifg=#282828 guibg=#fb4934
+" highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
+" nmap <silent> <C-a>k <Plug>(ale_previous_wrap)
+" nmap <silent> <C-a>j <Plug>(ale_next_wrap)
 
 " Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
