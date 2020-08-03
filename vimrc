@@ -14,6 +14,7 @@ call plug#begin()
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-commentary'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/vim-auto-save'
