@@ -86,6 +86,11 @@ let g:LanguageClient_serverCommands = {
     \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
     \ }
 
+let g:LanguageClient_rootMarkers = {
+    \ 'javascript': ['jsconfig.json'],
+    \ 'typescript': ['tsconfig.json'],
+    \ }
+
 " note that if you are using Plug mapping you should not use `noremap` mappings.
 nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
@@ -100,7 +105,9 @@ nmap <silent> <F2> <Plug>(lcn-rename)
 
 let g:LanguageClient_diagnosticsEnable=0
 
+" ================= Autocompletion Setup =================
 let g:deoplete#enable_at_startup = 1
+let g:SuperTabDefaultCompletionType = "<c-n>"
 
 " ================= Additional Config =================
 " Reference: http://items.sjbach.com/319/configuring-vim-right
