@@ -81,9 +81,9 @@ set timeout timeoutlen=1500
 
 " ================= Language Client Config =================
 let g:LanguageClient_serverCommands = {
-    \ 'javascript': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'javascript.jsx': ['/usr/local/bin/javascript-typescript-stdio'],
-    \ 'typescript': ['/usr/local/bin/javascript-typescript-stdio'],
+    \ 'javascript': ['tcp://127.0.0.1:2089'],
+    \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
+    \ 'typescript': ['tcp://127.0.0.1:2089'],
     \ }
 
 let g:LanguageClient_rootMarkers = {
