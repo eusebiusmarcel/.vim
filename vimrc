@@ -29,7 +29,8 @@ Plug 'tpope/vim-obsession'
 Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'leafgarland/typescript-vim'
+"Javascript indentation is set to be 4 with typescript-vim
+"Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
