@@ -174,14 +174,6 @@ set list listchars=tab:\ \ ,trail:·
 
 set linebreak    "Wrap lines at convenient points
 
-" ================ Custom Settings ========================
-
-" Window pane resizing
-nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
-nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
-nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
-nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
-
 " ========================================
 "
 "ctrlp.vim setup
@@ -214,8 +206,6 @@ let g:ctrlp_match_window = 'results:100'
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowHidden=1
-map <Leader>n :NERDTreeToggle<CR>
-map <Leader>m :NERDTreeFind<CR>
 
 "autosave setup
 let g:auto_save = 1  " enable AutoSave on Vim startup
@@ -249,8 +239,22 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
 highlight ALEError guifg=#282828 guibg=#fb4934
 highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
+
+" ================ Leader Shortcuts ========================
+
+" Window pane resizing
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+nnoremap <silent> <Leader>] :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
+nnoremap <silent> <Leader>[ :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
+
+" Ale
 nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+
+" Nerdtree
+map <Leader>n :NERDTreeToggle<CR>
+map <Leader>m :NERDTreeFind<CR>
 
 " Shortcut for copying and pasting to and from system clipboard
 map <Leader>y "+y
@@ -271,6 +275,17 @@ map <Leader>gf :!git push --force-with-lease<CR>
 map <Leader>gp :!git push<CR>
 " Shortcut for git blame
 nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
+
+" Shortcut for console.log
+" Console log from insert mode; Puts focus inside parentheses
+imap <Leader>cl console.log('log: ', );<Esc><S-f>,la
+imap <Leader>cj console.log(JSON.stringify({  }, null, 2));<Esc><S-f>{la
+" Console log from visual mode on next line, puts visual selection inside parentheses
+vmap <Leader>cl yo<Leader>cl<Esc>p
+vmap <Leader>cj yo<Leader>cj<Esc>p
+" Console log from normal mode, inserted on next line with word your on inside parentheses
+nmap <Leader>cl yiwo<Leader>cl<Esc>p
+nmap <Leader>cj yiwo<Leader>cj<Esc>p
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
