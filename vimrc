@@ -36,7 +36,7 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'mudge/runspec.vim', { 'for': 'ruby' }
-Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'fatih/vim-go', { 'for': 'go', 'tag': 'v1.22', 'do': ':GoUpdateBinaries' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
