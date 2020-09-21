@@ -278,13 +278,13 @@ nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
 
 " Shortcut for console.log
 " Console log from insert mode; Puts focus inside parentheses
-imap <Leader>cl console.log('log: ', );<Esc><S-f>,la
+imap <Leader>cl console.log(': ', );<Esc><S-f>,la
 imap <Leader>cj console.log(JSON.stringify({  }, null, 2));<Esc><S-f>{la
 " Console log from visual mode on next line, puts visual selection inside parentheses
-vmap <Leader>cl yo<Leader>cl<Esc>p
+vmap <Leader>cl yo<Leader>cl<Esc>p<S-f>:<Esc>P
 vmap <Leader>cj yo<Leader>cj<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
-nmap <Leader>cl yiwo<Leader>cl<Esc>p
+nmap <Leader>cl yiwo<Leader>cl<Esc>p<S-f>:<Esc>P
 nmap <Leader>cj yiwo<Leader>cj<Esc>p
 
 " Vim Tmux Navigator setting
