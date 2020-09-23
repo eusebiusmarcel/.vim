@@ -15,6 +15,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-commentary'
+Plug 'szw/vim-maximizer'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-scripts/vim-auto-save'
@@ -286,6 +287,10 @@ vmap <Leader>cj yo<Leader>cj<Esc>p
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 nmap <Leader>cl yiwo<Leader>cl<Esc>p<S-f>:<Esc>P
 nmap <Leader>cj yiwo<Leader>cj<Esc>p
+
+nnoremap <silent><C-w>z :MaximizerToggle<CR>
+vnoremap <silent><C-w>z :MaximizerToggle<CR>gv
+inoremap <silent><C-w>z <C-o>:MaximizerToggle<CR>
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
