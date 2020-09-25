@@ -98,6 +98,7 @@ nmap <F5> <Plug>(lcn-menu)
 " Or map each action separately
 nmap <silent>K <Plug>(lcn-hover)
 nmap <silent> gd <Plug>(lcn-definition)
+nmap <silent> gr <Plug>(lcn-references)
 nmap <silent> <F2> <Plug>(lcn-rename)
 
  let g:LanguageClient_rootMarkers = {
