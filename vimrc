@@ -290,9 +290,9 @@ vmap <Leader>cj yo<Leader>cj<Esc>p
 nmap <Leader>cl yiwo<Leader>cl<Esc>p<S-f>:<Esc>P
 nmap <Leader>cj yiwo<Leader>cj<Esc>p
 
-nnoremap <silent><C-w>z :MaximizerToggle<CR>
-vnoremap <silent><C-w>z :MaximizerToggle<CR>gv
-inoremap <silent><C-w>z <C-o>:MaximizerToggle<CR>
+nnoremap <silent><C-w>z :execute "NERDTreeClose \| MaximizerToggle"<CR>
+vnoremap <silent><C-w>z :execute "NERDTreeClose \| MaximizerToggle"<CR>gv
+inoremap <silent><C-w>z <C-o>:execute "NERDTreeClose \| MaximizerToggle"<CR>
 
 " Vim Tmux Navigator setting
 " let g:tmux_navigator_no_mappings = 1
