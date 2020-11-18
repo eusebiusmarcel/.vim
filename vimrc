@@ -279,16 +279,25 @@ map <Leader>gp :!git push<CR>
 " Shortcut for git blame
 nnoremap <Leader>bm :<C-u>call gitblame#echo()<CR>
 
-" Shortcut for console.log
+" Shortcut for debugging
 " Console log from insert mode; Puts focus inside parentheses
 imap <Leader>cl console.log(': ', );<Esc><S-f>,la
-imap <Leader>cj console.log(JSON.stringify({  }, null, 2));<Esc><S-f>{la
+imap <Leader>cj console.log(': ', JSON.stringify(, null, 2));<Esc><S-f>(a
 " Console log from visual mode on next line, puts visual selection inside parentheses
 vmap <Leader>cl yo<Leader>cl<Esc>p<S-f>:<Esc>P
-vmap <Leader>cj yo<Leader>cj<Esc>p
+vmap <Leader>cj yo<Leader>cj<Esc>p<S-f>:<Esc>P
 " Console log from normal mode, inserted on next line with word your on inside parentheses
 nmap <Leader>cl yiwo<Leader>cl<Esc>p<S-f>:<Esc>P
-nmap <Leader>cj yiwo<Leader>cj<Esc>p
+nmap <Leader>cj yiwo<Leader>cj<Esc>p<S-f>:<Esc>P
+" Alert from insert mode; Puts focus inside parentheses
+imap <Leader>al alert(': ', );<Esc><S-f>,la
+imap <Leader>aj alert(': ', JSON.stringify(, null, 2));<Esc><S-f>(a
+" Alert from visual mode on next line, puts visual selection inside parentheses
+vmap <Leader>al yo<Leader>al<Esc>p<S-f>:<Esc>P
+vmap <Leader>aj yo<Leader>aj<Esc>p<S-f>:<Esc>P
+" Alert from normal mode, inserted on next line with word your on inside parentheses
+nmap <Leader>al yiwo<Leader>al<Esc>p<S-f>:<Esc>P
+nmap <Leader>aj yiwo<Leader>aj<Esc>p<S-f>:<Esc>P
 
 nnoremap <silent><C-w>z :execute "NERDTreeClose \| MaximizerToggle"<CR>
 vnoremap <silent><C-w>z :execute "NERDTreeClose \| MaximizerToggle"<CR>gv
