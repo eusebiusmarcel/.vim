@@ -57,6 +57,7 @@ filetype plugin on
 filetype indent on
 
 " ================ General Config ====================
+set clipboard=unnamedplus
 set number relativenumber       "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -72,7 +73,7 @@ syntax on
 
 "set theme
 colorscheme gruvbox
-set background=light
+set background=dark
 
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -264,6 +265,10 @@ map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
 map <Leader>P "+P
+
+" Prevent x from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_X
 
 " Shortcut for git
 map <Leader>gs :!git status<CR>
