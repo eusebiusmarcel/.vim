@@ -57,7 +57,8 @@ filetype plugin on
 filetype indent on
 
 " ================ General Config ====================
-set clipboard=unnamedplus
+set mouse=a                     "Use mouse selection as visual mode selection
+set clipboard=unnamedplus       "Enable to copy smoothly from WSL
 set number relativenumber       "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
