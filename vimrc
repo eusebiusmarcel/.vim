@@ -58,7 +58,6 @@ filetype indent on
 
 " ================ General Config ====================
 set mouse=a                     "Use mouse selection as visual mode selection
-set clipboard=unnamedplus       "Enable to copy smoothly from WSL
 set number relativenumber       "Line numbers are good
 set backspace=indent,eol,start  "Allow backspace in insert mode
 set history=1000                "Store lots of :cmdline history
@@ -266,10 +265,6 @@ map <Leader>y "+y
 map <Leader>d "+d
 map <Leader>p "+p
 map <Leader>P "+P
-
-" Prevent x from overriding what's in the clipboard.
-noremap x "_x
-noremap X "_X
 
 " Shortcut for git
 map <Leader>gs :!git status<CR>
