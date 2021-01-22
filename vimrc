@@ -244,6 +244,19 @@ highlight ALEWarning guibg=#282828 guifg=#ff9966 cterm=italic
 highlight ALEError guifg=#282828 guibg=#fb4934
 highlight ALEWarningSign guifg=#ff9966 guibg=#3c3836
 
+" Tab navigation
+nnoremap <leader>1 1gt
+nnoremap <leader>2 2gt
+nnoremap <leader>3 3gt
+nnoremap <leader>4 4gt
+nnoremap <leader>5 5gt
+nnoremap td  :tabclose<CR>
+nnoremap th :tabnext<CR>
+nnoremap tl :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tt  :tabedit<Space>
+nnoremap tm  :tabm<Space>
+
 " ================ Leader Shortcuts ========================
 
 " Window pane resizing
