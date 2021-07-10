@@ -88,6 +88,7 @@ let g:LanguageClient_serverCommands = {
     \ 'javascript': ['tcp://127.0.0.1:2089'],
     \ 'javascript.jsx': ['tcp://127.0.0.1:2089'],
     \ 'typescript': ['tcp://127.0.0.1:2089'],
+    \ 'ruby': ['tcp://127.0.0.1:7658'],
     \ }
 
 let g:LanguageClient_rootMarkers = {
