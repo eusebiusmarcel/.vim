@@ -4,6 +4,9 @@ set nocompatible
 filetype off
 let mapleader=","
 
+scriptencoding utf-8
+set encoding=utf-8
+
 " vim-plug (plugin manager)
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -235,8 +238,6 @@ let g:ale_fixers = {
 \}
 nmap <F8> <Plug>(ale_fix)
 let g:ale_fix_on_save = 0
-let g:ale_sign_error = '✘'
-let g:ale_sign_warning = '⚠'
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'
