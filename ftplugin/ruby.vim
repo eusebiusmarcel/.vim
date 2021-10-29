@@ -12,8 +12,9 @@ nmap <buffer> <leader>b :%!seeing_is_believing --timeout 12 --line-length 500 --
 "
 nmap <buffer> <leader>c :%.!seeing_is_believing --clean<CR>;
 "
-" RSpec.vim settings
+" vim-test settings
 " let test#ruby#rspec#options = '--tag ~sql_view --tag ~gcs --tag ~flaky --tag ~deprecated'
+let test#ruby#rspec#executable = 'bundle exec rspec'
 let test#ruby#bundle_exec = 0
 
 map <buffer> <Leader>t :TestFile<CR>
@@ -22,6 +23,7 @@ map <buffer> <Leader>l :TestLast<CR>
 map <buffer> <Leader>a :TestSuite<CR>
 map <buffer> <Leader>v :TestVisit<CR>
 
+" runspec settings
 " For Running plain Ruby test scripts
 map <buffer> <Leader>r <Plug>RunSpecRun
 " Switch between spec and corresponding code
