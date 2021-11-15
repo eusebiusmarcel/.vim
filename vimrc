@@ -70,6 +70,7 @@ set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
 set termguicolors               "Use 256 colors"
+set colorcolumn=120             "Mark the end of 120 textwidth length"
 
 "turn on syntax highlighting
 syntax on
