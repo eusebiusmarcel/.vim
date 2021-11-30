@@ -201,7 +201,7 @@ let g:rg_command = 'rg --vimgrep -S'
 " ctrlp ripgrep setup
 " https://elliotekj.com/2016/11/22/setup-ctrlp-to-use-ripgrep-in-vim/
 if executable('rg')
-  set grepprg=rg\ --color=never
+  set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
   let g:ctrlp_user_command = 'rg %s --files --hidden -g "!.git/" --color=never --glob ""'
   let g:ctrlp_use_caching = 0
 endif
