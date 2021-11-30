@@ -23,6 +23,10 @@ map <buffer> <Leader>l :TestLast<CR>
 map <buffer> <Leader>a :TestSuite<CR>
 map <buffer> <Leader>v :TestVisit<CR>
 
+map <buffer> <Leader>tf :TestFile --only-failures<CR>
+map <buffer> <Leader>sf :TestNearest --only-failures<CR>
+map <buffer> <Leader>af :TestSuite --only-failures<CR>
+
 " runspec settings
 " For Running plain Ruby test scripts
 map <buffer> <Leader>r <Plug>RunSpecRun
