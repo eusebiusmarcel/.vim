@@ -1,4 +1,9 @@
-"Use Vim settings, rather then Vi settings (much better!).
+" When installing in a new machine, follow this steps:
+" 1. Install python3 and pip3
+" 2. Install VIM 8.2, vim-gtk that have clipboard and python3 support
+" 3. Open this vimrc with vim, it will install the plugins
+
+" Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 filetype off
